@@ -54,6 +54,7 @@ function tweet() { //função tweet posta o comentário
   commentParent.appendChild(post);
   event.preventDefault();
   clear();//limpa o textarea
+  document.getElementById("remening").textContent = 140;
 }
 
 
