@@ -59,9 +59,14 @@ function tweet() { //função tweet posta o comentário
   var postTweet = document.getElementById('post-tweet').value;
   var commentParent = document.getElementById('comment-posted');
   var post = document.createElement('div'); //post cria uma div vazia
-  post.classList = 'printed-tweet'; //adiciona uma class a div criada
+  var printedTweet = document.getElementsByClassName('printed-tweet');
+  var tweetDate = document.createElement("p");
+  post.classList.add('printed-tweet'); //adiciona uma class a div criada
   post.innerHTML = postTweet; //insere o valor de textarea dentro da div
+  tweetDate.classList.add('p-date');
+  tweetDate.innerHTML = moment().locale('pt-BR').subtract(6, 'days').calendar(); 
   commentParent.appendChild(post);
+  post.appendChild(tweetDate);
   event.preventDefault();
   clear();//limpa o textarea
   document.getElementById("remening").textContent = 140;
