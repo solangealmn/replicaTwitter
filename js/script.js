@@ -26,10 +26,6 @@ function tweet() { //função tweet posta o comentário
   post.classList = 'printed-tweet'; //adiciona uma class a div criada
   post.innerHTML = postTweet; //insere o valor de textarea dentro da div
   commentParent.appendChild(post);
-  clean('post-tweet'); //limpa o textarea
+  postTweet.value = ""; //limpa o textarea
   event.preventDefault();
-}
-//limpar o textarea depois de cada tweet
-function clean(clear) {
-  document.getElementById(clear).value = "";
 }
