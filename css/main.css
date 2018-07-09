@@ -99,6 +99,8 @@ form {
   margin: 0;
   text-align: left;
   font-size: 0.8rem;
+  color:#657786;
+  font-weight: 800;
 }
 #comment-posted {
   width: 500px;
