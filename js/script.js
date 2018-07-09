@@ -22,12 +22,15 @@ function clear() {
   document.getElementById("btn-tweet").disabled = true; //desabilita o botão
   document.getElementById("btn-tweet").classList.add('add-opacity');//remove a opacidade do botão
 }
+//escuta as a ação de digitar
 document.getElementById("post-tweet").addEventListener("keydown", counter);
+//conta os caracteres digitados
 function counter() {
   var charlimit = 140; //contém o valor limite de caracteres
   var tweet = document.getElementById("post-tweet").value;
   var charSize = charlimit - tweet.length;
   document.getElementById("remening").innerHTML = charSize;
+  //formata o cor do contador de acordo com a quantidade de caracteres digitados
   if(document.getElementById("post-tweet").value.length == 140){
     document.getElementById("remening").style.color = "#657786";
   }
@@ -39,6 +42,13 @@ function counter() {
   }
   if(document.getElementById("post-tweet").value.length >= 140){
     document.getElementById("remening").style.color = "#B22222";
+  }
+}
+document.getElementById("post-tweet").addEventListener("keypress", fieldSize);
+function fieldSize() {
+  if(document.getElementById("post-tweet").scrollTop != 0){ //se a quantidade de pixels rolados no textarea não for 0 então:
+      //a altura do textarea será igual a quantidade de pixels rolados
+      document.getElementById("post-tweet").style.height = document.getElementById("post-tweet").scrollHeight + "px";
   }
 }
 //Escuta a ação de enviar um novo tweet.
@@ -55,45 +65,6 @@ function tweet() { //função tweet posta o comentário
   event.preventDefault();
   clear();//limpa o textarea
   document.getElementById("remening").textContent = 140;
+  document.getElementById("remening").style.color = "#657786";
+  document.getElementById("post-tweet").scrollHeight = 0;
 }
-
-
-
-
-
-// //postTweet pega o textarea pela id
-// var postTweet = document.getElementById('post-tweet');
-// //newTweet pega o botão pela id
-// var newTweet = document.getElementById('btn-tweet');
-//
-// //escuta a ação de colocar texto dentro do textarea
-// postTweet.addEventListener('keyup', function typeOnField() {
-//   postTweet.value;
-//   postTweet.length;
-//   //verifica se tem algum valor dentro de textarea
-//   if (postTweet.value.length < 0 || postTweet.value == '' || postTweet.value.length > 140) {
-//     newTweet.disabled = true; //desabilita o botão
-//     newTweet.classList.add('add-opacity');//coloca a opacidade do botão
-//   } else {
-//     newTweet.disabled = false; //habilita o botão
-//     newTweet.classList.remove('add-opacity');//remove a opacidade do botão
-//   }
-// });
-// postTweet.addEventListener('keydown', function counter() {
-//   postTweet.value;
-//   postTweet.length;
-//   var remening = document.getElementById('remening');
-//   var charlimit = 140; //contém o valor limite de caracteres
-//   var character = postTweet;
-//   character.split(''); //pega cada um dos caracteres digitados
-//   remening.innerText = charlimit - character.length; //insere a quantidade de caracteres dentro do p
-//   if(postTweet.value.length > 120){
-//     postTweet.style.color = "#FF8C00";
-//   }
-//   if(postTweet.value.length > 130){
-//     postTweet.style.color = "#FF6347";
-//   }
-//   if(postTweet.value.length > 140){
-//     postTweet.style.color = "#DC143C";
-//   }
-// });
