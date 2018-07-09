@@ -20,8 +20,9 @@ body{
 }
 .menu-topo{
   display: flex;
-  justify-content: space-around;
-  align-content: center;
+  flex-wrap: wrap;
+  justify-content:center;
+  align-items: center;
   background-color: #1da1f2;
   color: #fff;
   font-weight: 500;
@@ -33,8 +34,7 @@ body{
   display: inline-block;
 }
 .menu-topo span{
-  font-size: 2rem;
-  padding: 10px;
+  font-size: 1.6rem;
 }
 .menu-topo span a{
   color: #fff;
@@ -54,15 +54,24 @@ form {
   padding: 30px;
   margin-bottom: 30px;
 }
-form #post-tweet {
+#post-tweet {
   width: 100%;
-  height: 100%;
-  padding: 15px;
+  max-height: 100%;
+  border: none;
+  border-bottom: 2px solid #1da1f2;
+  padding: 5px;
   margin-bottom: 20px;
-  color: #657786;
-  overflow-y: hidden;
+  color: #657786;;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.2rem;
+  resize: none;
+  overflow: hidden;
 }
-form #btn-tweet{
+#post-tweet::placeholder {
+  color: #cdd0d3;
+  font-size: 1.2em;
+}
+#btn-tweet{
   width: 25%;
   height: 30px;
   background-color: #1da1f2;
@@ -71,18 +80,38 @@ form #btn-tweet{
   border-radius: 16px;
   border: 1px solid #fff;
 }
-form #btn-tweet:hover{
+#btn-tweet:hover{
   background-color: #fff;
   color: #1da1f2;
   border: 1px solid #1da1f2;
+}
+#btn-tweet .desabled{
+  background-color: #A7DBFB;
+  border-color: transparent;
+}
+#remening{
+  position: relative;
+  top: -10px;
+  right: 0;
+  left: 90%;
+  width: 10%;
+  height: 20px;
+  margin: 0;
+  text-align: left;
+  font-size: 0.8rem;
 }
 #comment-posted {
   width: 500px;
   height: 100%;
 }
 .printed-tweet{
+  width: 100%;
   background: #fff;
   padding: 30px;
   color: #657786;
   font-size: 1.5rem;
+  word-wrap: break-word;
+}
+.add-opacity{
+  opacity: 0.4;
 }
