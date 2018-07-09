@@ -2,7 +2,7 @@ html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: url(../images/bg-boat.jpg) no-repeat center center fixed;
+  background: url(../images/lifestyle.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -28,6 +28,7 @@ body{
   font-weight: 500;
   height: 60px;
   margin-bottom: 20px;
+  border-bottom: 3px solid #67BEF4;
 }
 .menu-topo ul li{
   list-style: none;
@@ -35,6 +36,11 @@ body{
 }
 .menu-topo span{
   font-size: 1.6rem;
+}
+i.fa-twitter{
+  padding: 10px;
+  color:#fff;
+  font-size: 20px;
 }
 .menu-topo span a{
   color: #fff;
