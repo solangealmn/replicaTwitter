@@ -11,6 +11,7 @@ postTweet.addEventListener('keyup', function() {
   } else{
     newTweet.disabled = true; //desabilita o botão
   }
+  var remening = document.getElementById('remening');
   var charlimit = 140; //contém o valor limite de caracteres
   var character = postTweet.value.split(''); //pega cada um dos caracteres digitados
   remening.innerText = charlimit - character.length; //insere a quantidade de caracteres dentro do p
